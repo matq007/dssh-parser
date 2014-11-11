@@ -1,0 +1,18 @@
+/* DEFAULT CSS STYLE */
+
+#treeNav li{
+    margin-left: -30px;
+}
+
+#treeNav ul{
+    margin-left: -30px;
+}
+
+.file{
+    color: #ffb366;
+}
+
+.folder{
+    margin-left: -40px;
+    color: #66B2FF;
+}
