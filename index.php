@@ -11,7 +11,7 @@
 
 	<!-- Bootstrap core CSS -->
 	<link href="assets/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
+	<link href="assets/css/style.css" rel="stylesheet">
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
@@ -24,10 +24,10 @@
 	  {
 		padding-top: 70px;
 	  }
-      /* hide original list counter */
-      #treeNav ul li {display:block;}
-      /* OR */
-      #treeNav ul {list-style:none;}
+
+	  /* hide original list counter */
+	  #treeNav ul li {display:block;}
+	  #treeNav ul {list-style:none;}
 
 	</style>
 
@@ -57,32 +57,31 @@
 	  
 	  <div class="col-lg-4" id="treeNav">
 		<?php
-            error_reporting(E_ALL);
-            include "directory.php";
-            listDir($path, $hidden);
-        ?>
+			error_reporting(E_ALL);
+			include "directory.php";
+			listDir($path, $hidden);
+		?>
 	  </div>
 
-      <div class="col-lg-8">
+	  <div class="col-lg-8">
 
-      </div>
+	  </div>
 
 
 	</div>  <!-- -/. container -->
 
   <script src="assets/js/jquery-2.1.1.min.js"></script>
-  <script src="lib/treeView.js"></script>
 
   <script>
 
-      $(document).ready(function() {
-          $("#treeNav li.folder").siblings("ul").toggle();
-      });
+	  $(document).ready(function() {
+		  $("#treeNav li.folder").siblings("ul").toggle();
+	  });
 
-      $("#treeNav li.folder").click(function(){
-          $(this).next("ul").toggle();
-          $(this).find("span").toggleClass("glyphicon-folder-close glyphicon-folder-open");
-      });
+	  $("#treeNav li.folder").click(function(){
+		  $(this).next("ul").toggle();
+		  $(this).find("span").toggleClass("glyphicon-folder-close glyphicon-folder-open");
+	  });
 
   </script>
 
