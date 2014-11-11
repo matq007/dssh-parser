@@ -4,6 +4,11 @@ $config = parse_ini_file('dssh.conf', true);
 $path   = $config["directory"]["path"];
 $hidden = $config["directory"]["hidden"] == "true" ? true : false;
 
+/**
+ * Function for listing directory
+ * @param string $dir  directory to scan
+ * @param bool   $show true show/hide hidden files/folders
+ */
 function listDir($dir, $show)
 {
     echo "<ul>";
@@ -22,7 +27,8 @@ function listDir($dir, $show)
                 if (is_dir($dir . DIRECTORY_SEPARATOR . $value))
                 {
                     echo "<ul>";
-                    echo "<li class=\"folder\"><span class=\"glyphicon glyphicon-folder-close\"></span>&nbsp;"
+                    echo "<li class=\"folder\">
+                            <span class=\"glyphicon glyphicon-folder-close\"></span>&nbsp;"
                             . $value . "</li>";
                     listDir($dir . DIRECTORY_SEPARATOR . $value, $show);
                     echo "</ul>";

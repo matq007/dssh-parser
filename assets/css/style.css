@@ -1,5 +1,14 @@
 /* DEFAULT CSS STYLE */
 
+body
+{
+    padding-top: 70px;
+}
+
+/* hide original list counter */
+#treeNav ul li {display:block;}
+#treeNav ul {list-style:none;}
+
 #treeNav li{
     margin-left: -30px;
 }
