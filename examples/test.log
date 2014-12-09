@@ -1,0 +1,55 @@
+Last login: Tue Oct 28 08:11:48 2014 from 91.210.182.22
+
+
+ * services.digmia.com
+ * ns1.digmia.com
+
+V /var/named je mercurial, commitujte prosim svoje zmeny. f.
+
+
+Without your space helmet, root, you're going to find that rather difficult.
+]0;root@services: ~root@services:~# 
+]0;root@services: ~root@services:~# 
+]0;root@services: ~root@services:~# grep mattoni /etc/passwd
+mattoni:x:5227:5227::/home/mattoni:/bin/bash
+]0;root@services: ~root@services:~# adduser mattoni2
+Adding user `mattoni2' ...
+Adding new group `mattoni2' (1012) ...
+Adding new user `mattoni2' (1013) with group `mattoni2' ...
+Creating home directory `/home/mattoni2' ...
+Copying files from `/etc/skel' ...
+Enter new UNIX password: 
+Retype new UNIX password: 
+passwd: password updated successfully
+Changing the user information for mattoni2
+Enter the new value, or press ENTER for the default
+	Full Name []: Anton Matta
+	Room Number []: 
+	Work Phone []: 
+	Home Phone []: 
+	Other []: Testovaci ucet na dssh logy.
+Is the information correct? [y/N] y
+]0;root@services: ~root@services:~# 
+]0;root@services: ~root@services:~# 
+]0;root@services: ~root@services:~# 
+]0;root@services: ~root@services:~# adduser mattoni2grep mattoni /etc/passwd
+mattoni:x:5227:5227::/home/mattoni:/bin/bash
+mattoni2:x:1013:1012:Anton Matta,,,,Testovaci ucet na dssh logy.:/home/mattoni2:/bin/bash
+]0;root@services: ~root@services:~# 
+]0;root@services: ~root@services:~# 
+]0;root@services: ~root@services:~# 
+]0;root@services: ~root@services:~# usermod -s /bin/false mattoni2
+]0;root@services: ~root@services:~# usermod -s /bin/false mattoni2
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[6Pgrep mattoni /etc/passwd
+mattoni:x:5227:5227::/home/mattoni:/bin/bash
+mattoni2:x:1013:1012:Anton Matta,,,,Testovaci ucet na dssh logy.:/home/mattoni2:/bin/false
+]0;root@services: ~root@services:~# 
+]0;root@services: ~root@services:~# 
+]0;root@services: ~root@services:~# 
+]0;root@services: ~root@services:~# userdel mattoni2
+]0;root@services: ~root@services:~# userdel mattoni2[K
+]0;root@services: ~root@services:~# 
+]0;root@services: ~root@services:~# userdel mattoni2grep mattoni /etc/passwd
+mattoni:x:5227:5227::/home/mattoni:/bin/bash
+]0;root@services: ~root@services:~# 
+]0;root@services: ~root@services:~# logout

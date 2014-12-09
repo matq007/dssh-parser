@@ -13,6 +13,7 @@
 	<link href="assets/css/bootstrap.css" rel="stylesheet">
 	<link href="assets/css/style.css" rel="stylesheet">
 
+	<link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
 	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -43,7 +44,7 @@
 
 	<div class="container pulldown">
 	  
-	  <div class="col-lg-4" id="treeNav">
+	  <div class="col-lg-3" id="treeNav">
 		<?php
 			error_reporting(E_ALL);
 			include "directory.php";
@@ -51,25 +52,44 @@
 		?>
 	  </div>
 
-	  <div class="col-lg-8">
-
+	  <p class="col-lg-9 terminal-top-bar">Welcome to DSSH</p>
+	  <div class="col-lg-9 terminal">
+	  	<div id="parsedText">
+	  		<p class="console"><span id="caption"></span><span id="cursor">|</span></p>
+	  	</div>
 	  </div>
 
 
 	</div>  <!-- -/. container -->
 
   <script src="assets/js/jquery-2.1.1.min.js"></script>
+  <script src="lib/Parser.js"></script>
 
   <script>
 
-	  $(document).ready(function() {
-		  $("#treeNav li.folder").siblings("ul").toggle();
-	  });
+  		var data  = [];
+  		var timer = [];
 
-	  $("#treeNav li.folder").click(function(){
+		$(document).ready(function() {
+			$("#treeNav li.folder").siblings("ul").toggle();
+			setInterval ('cursorAnimation()', 600);
+
+		});
+
+		$("#treeNav li.folder").click(function(){
 		  $(this).next("ul").toggle();
 		  $(this).find("span").toggleClass("glyphicon-folder-close glyphicon-folder-open");
-	  });
+		});
+
+		$("#treeNav li.file").click(function(){
+			var file   = $(this).attr('value');
+			$(".terminal-top-bar").text(file);
+			loadFile(file);
+			//console.log(result);
+			//$("#parsedText").html(result);	
+		});
+
+
 
   </script>
 
